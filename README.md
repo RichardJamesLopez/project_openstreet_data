@@ -70,7 +70,7 @@ http://stackoverflow.com/questions/3095434/inserting-newlines-in-xml-file-genera
 <b>Size of the files<b/><br/>
 
 As pictured below, the uncompressed file for the map excerpt is larger than 50Mb
-![Size of Files](/udacity_project_openstreetdata_rjl/size-of-files.png)
+![Size of Files](https://github.com/RichardJamesLopez/project_openstreet_data/blob/master/size-of-files.png)
 <br/><br/>
 <b>Number of unique users<b/><br/>
 ```
@@ -131,7 +131,7 @@ plt.title('Restaurants, Cafes, ATMs')
 plt.legend(loc=2)
 ```
 
-!![Restaurants, Cafes, ATMs 11.46.AM](/udacity_project_openstreetdata_rjl/restaurants-cafes-atms-11-46-am.png)
+!![Restaurants, Cafes, ATMs 11.46.AM](https://github.com/RichardJamesLopez/project_openstreet_data/blob/master/restaurants-cafes-atms-11-46-am.png)
 
 For this plot, you can see the coordinates for different Restaurants, Cafes, and ATMs in the Bozeman, MT area.
 
