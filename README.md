@@ -6,11 +6,11 @@ The overall objective is to extract data from a map of your choosing, and then p
 
 ## <u>List of Tasks for Project <u/>
 ### Data Extraction
-- [x] <b>Choose Map Area<b/>
+- [x] **Choose Map Area**
 
 The map extract that I chose from Mapzen was of the Bozeman, MT area in the United States. It is a small city in the a very sparsely populated state. The initial extract of the metropolitan area didn’t yield enough data for the basic size requirements. As a result, the User can extract more data by expanding  map area to include the metropolitan area as well as the surrounding peri-urbanization.
 
-- [x] <b>Utilize the Overpass API to extract map<b/>
+- [x] **Utilize the Overpass API to extract map**
 
 Most of this data collection was working with the Mapzen task outlined in references. User has to register with Mapzen, choose the parameters and then Mapzen sends the raw data file to process.
 
@@ -20,13 +20,13 @@ https://www.openstreetmap.org/#map=7/45.132/-110.253
 http://wiki.openstreetmap.org/wiki/Overpass_API
 
 ### Data  Processing
-- [x] <b> Transfer the Dataset<b/>
-- [x] <b> Clean the Data Set<b/>
+- [x] **Transfer the Dataset**
+- [x] **Clean the Data Set**
 
-<b> Cleaning of Street Names<b/><br/>
+**Cleaning of Street Names**<br/>
 
 There were several functions that helped clean up the data set. For example, in the
-- <i> py.project_openstreetmap_preparing_db.py<i/>
+- *py.project_openstreetmap_preparing_db.py*
 
 file, there are several cElementTree functions that check if the phone numbers were put in correctly, the street names fit the schema and if the elements could be changed into dicts. When applicable, many tags were cleaned to fit the schema for consistency. See below for some of the street name changes.
 
@@ -39,10 +39,10 @@ file, there are several cElementTree functions that check if the phone numbers w
 
 The additional functions used to clean the data are commented in the python file for each step along the process.
 
-- [x] <b> Write Data Set to DB<b/>
+- [x] **Write Data Set to DB**
 
 Created a sample file so as to explore the data without having to run queries on the whole map. File(s) below:<br/>
-- <i> py.project_openstreetmap_create_sample_file.py <i/>
+- *py.project_openstreetmap_create_sample_file.py*
 
 The bulk of the work was done from this process. In the files below, the following steps were generally followed
 - the program can extract data from OSM files,
@@ -53,9 +53,9 @@ The bulk of the work was done from this process. In the files below, the followi
 - wrote the data from the CSVs onto a SQL database
 
 File(s) below:
-  - py.project_openstreetmap_preparing_db.py
-  - py.project_openstreetmap_inserting_db.py
-  - py.project_openstreetmap_data_case_study.py
+  - *py.project_openstreetmap_preparing_db.py*
+  - *py.project_openstreetmap_inserting_db.py*
+  - *py.project_openstreetmap_data_case_study.py*
 
 
 Reference:<br>
@@ -65,14 +65,14 @@ http://stackoverflow.com/questions/3095434/inserting-newlines-in-xml-file-genera
 
 
 ### Data Exploring
-- [x] <b>Address basic questions<b/><br/>
+- [x] **Address basic questions**<br/>
 
-<b>Size of the files<b/><br/>
+**Size of the files**<br/>
 
 As pictured below, the uncompressed file for the map excerpt is larger than 50Mb
 ![Size of Files](https://github.com/RichardJamesLopez/project_openstreet_data/blob/master/size-of-files.png)
 <br/><br/>
-<b>Number of unique users<b/><br/>
+**Number of unique users**<br/>
 ```
 unique_users = cur.execute("""SELECT COUNT(DISTINCT(e.uid))
                 FROM (SELECT uid FROM nodes UNION ALL SELECT uid FROM ways) e;""").fetchall()
@@ -82,7 +82,7 @@ pprint (unique_users)
 [(235,)]
 ```
 
-<b>Number of nodes and ways<b/>
+**Number of nodes and ways**
 <br/>
 ```
 cur.execute('SELECT COUNT (*) FROM nodes')
@@ -98,7 +98,7 @@ cur.fetchall()
 ```
 [(17080,)]
 ```
-<b>Number of chosen type of nodes, like cafes, shops etc.<b/><br/>
+**Number of chosen type of nodes, like cafes, shops etc.**<br/>
 
 Coded below is a count of a chose nodes_tag for amount of cafes in the Bozeman area.
 ```
@@ -108,13 +108,13 @@ cur.fetchall()
 ```
 [(13,)]
 ```
-- [x] <b>Populate and design visualization<b/>
+- [x] **Populate and design visualization**
 <br/>
 
 In this section, there is a mix of SQL functions to organize data and Matplotlib to visual the data. There is a simple plot of a subset of data shown below with the code.
 File below: <br/>
 
-- <i> py.project_openstreetmap_data_chart.py<i/>
+- *py.project_openstreetmap_data_chart.py*
 
 
 
@@ -138,7 +138,7 @@ For this plot, you can see the coordinates for different Restaurants, Cafes, and
 Reference:<br>
 https://github.com/mudspringhiker/openstreetmap_datawrangling
 
-- [x] <b>Suggestions for Improvement of Data<b/>
+- [x] **Suggestions for Improvement of Data**
 
 It was unclear to me whether some of the tag values could be mutually exclusive or not. The main example is how most all 'cafes' could be considered 'cuisine', but not vice versa. This gave me some reservations as to how to compare venues.
 
@@ -185,20 +185,20 @@ The extensive code review and versioning has been crucial throughout this proces
 ## Complete Set of References
 Udacity Data Wrangling Course
 
-Other's Sample Projects<b><br/>
+**Other's Sample Projects**<br/>
 https://github.com/mudspringhiker/openstreetmap_datawrangling
 https://gist.github.com/carlward/54ec1c91b62a5f911c42
 https://github.com/jkarakas/Wrangle-OpenStreetMaps-Data-with-SQL
 
-SQLite documentation<b><br/>
+**SQLite documentation**<br/>
 https://docs.python.org/3.6/library/sqlite3.html
 
-XML Extraction documentation<b><br/>
+**XML Extraction documentation**<br/>
 http://stackoverflow.com/questions/3095434/inserting-newlines-in-xml-file-generated-via-xml-etree-elementtree-in-python
 
-Python3 issues<b><br/>
+**Python3 issues**<br/>
 https://stackoverflow.com/questions/8515053/csv-error-iterator-should-return-strings-not-bytes
 
-Mapzen data<b><br/>
+**Mapzen data**<br/>
 https://www.openstreetmap.org/#map=7/45.132/-110.253
 http://wiki.openstreetmap.org/wiki/Overpass_API
