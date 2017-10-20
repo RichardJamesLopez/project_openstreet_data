@@ -6,6 +6,10 @@ import re
 import xml.etree.cElementTree as ET
 import cerberus
 import schema
+# the left over function is from the previous file project_openstreet_data/py.project_openstreetdata_casestudy.py
+# However, 
+from py_project_openstreetdata_casestudy import update name
+
 
 # Set the schema according to Udacity conventions
 
