@@ -26,7 +26,7 @@ http://wiki.openstreetmap.org/wiki/Overpass_API
 **Cleaning of Street Names**<br/>
 
 There were several functions that helped clean up the data set. For example, in the
-- *py.project_openstreetmap_preparing_db.py*
+- *py_project_openstreetmap_preparing_db.py*
 
 file, there are several cElementTree functions that check if the phone numbers were put in correctly, the street names fit the schema and if the elements could be changed into dicts. When applicable, many tags were cleaned to fit the schema for consistency. See below for some of the street name changes.
 
@@ -42,7 +42,7 @@ The additional functions used to clean the data are commented in the python file
 - [x] **Write Data Set to DB**
 
 Created a sample file so as to explore the data without having to run queries on the whole map. File(s) below:<br/>
-- *py.project_openstreetmap_create_sample_file.py*
+- *py_project_openstreetmap_create_sample_file.py*
 
 The bulk of the work was done from this process. In the files below, the following steps were generally followed
 - the program can extract data from OSM files,
@@ -53,9 +53,9 @@ The bulk of the work was done from this process. In the files below, the followi
 - wrote the data from the CSVs onto a SQL database
 
 File(s) below:
-  - *py.project_openstreetmap_preparing_db.py*
-  - *py.project_openstreetmap_inserting_db.py*
-  - *py.project_openstreetmap_data_case_study.py*
+  - *py_project_openstreetmap_preparing_db.py*
+  - *py_project_openstreetmap_inserting_db.py*
+  - *py_project_openstreetmap_data_case_study.py*
 
 
 Reference:<br>
@@ -114,7 +114,7 @@ cur.fetchall()
 In this section, there is a mix of SQL functions to organize data and Matplotlib to visual the data. There is a simple plot of a subset of data shown below with the code.
 File below: <br/>
 
-- *py.project_openstreetmap_data_chart.py*
+- *py_project_openstreetmap_data_chart.py*
 
 
 
