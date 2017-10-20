@@ -26,8 +26,7 @@ http://wiki.openstreetmap.org/wiki/Overpass_API
 <b> Cleaning of Street Names<b/><br/>
 
 There were several functions that helped clean up the data set. For example, in the
-- <i> py.project_openstreetmap_preparing_db.py
-<i/>
+- <i> py.project_openstreetmap_preparing_db.py<i/>
 
 file, there are several cElementTree functions that check if the phone numbers were put in correctly, the street names fit the schema and if the elements could be changed into dicts. When applicable, many tags were cleaned to fit the schema for consistency. See below for some of the street name changes.
 
@@ -53,13 +52,10 @@ The bulk of the work was done from this process. In the files below, the followi
 - wrote new CSVs with the extracted data from the OSM,
 - wrote the data from the CSVs onto a SQL database
 
-File(s) below:<br/>
-
-- <i> py.project_openstreetmap_preparing_db.py
-<i/>
-- <i> py.project_openstreetmap_inserting_db.py
-<i/>
-- <i> py.project_openstreetmap_data_case_study.py <i/>
+File(s) below:
+  - py.project_openstreetmap_preparing_db.py
+  - py.project_openstreetmap_inserting_db.py
+  - py.project_openstreetmap_data_case_study.py
 
 
 Reference:<br>
@@ -74,7 +70,7 @@ http://stackoverflow.com/questions/3095434/inserting-newlines-in-xml-file-genera
 <b>Size of the files<b/><br/>
 
 As pictured below, the uncompressed file for the map excerpt is larger than 50Mb
-![Size of Files](/Users/RichardJamesLopez/Dropbox/Jupyter/images/2017/10/size-of-files.png)
+![Size of Files](/udacity_project_openstreetdata_rjl/size-of-files.png)
 <br/><br/>
 <b>Number of unique users<b/><br/>
 ```
@@ -135,7 +131,7 @@ plt.title('Restaurants, Cafes, ATMs')
 plt.legend(loc=2)
 ```
 
-!![Restaurants, Cafes, ATMs 11.46.AM](/Users/RichardJamesLopez/Dropbox/Jupyter/images/2017/10/restaurants-cafes-atms-11-46-am.png)
+!![Restaurants, Cafes, ATMs 11.46.AM](/udacity_project_openstreetdata_rjl/restaurants-cafes-atms-11-46-am.png)
 
 For this plot, you can see the coordinates for different Restaurants, Cafes, and ATMs in the Bozeman, MT area.
 
